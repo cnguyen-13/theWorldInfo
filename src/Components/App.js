@@ -45,9 +45,6 @@ function App() {
         <div className="app">
             <TopBar themeTogglerFunc={changeThemeFunc} theme={theme} />
             <Switch>
-                <Route path="/:countryName/neighbor/:neighbor">
-                    <CountryPage />
-                </Route>
                 <Route path="/:countryName">
                     <CountryPage />
                 </Route>

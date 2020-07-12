@@ -4,27 +4,35 @@ import MainSection from "./MainSection";
 import { useParams } from "react-router-dom";
 
 export default function CountryPage() {
-    const { countryName, neighbor } = useParams();
+    const { countryName } = useParams();
     const [countryData, setCountryData] = useState(null);
     //CHeck for 3 letter code of countries as well
     useEffect(() => {
         async function getCountryData() {
-            let res;
-            console.log(countryName, countryName.length);
-            if (neighbor) {
-                res = await fetch(
-                    `https://restcountries.eu/rest/v2/alpha/${countryName}`
-                );
-            } else {
-                res = await fetch(
-                    `https://restcountries.eu/rest/v2/name/${countryName}?fullText=true`
-                );
-            }
+            console.log("ran");
+            setCountryData(null);
+            const res =
+                countryName.length === 3
+                    ? await fetch(
+                          `https://restcountries.eu/rest/v2/alpha/${countryName}`
+                      )
+                    : await fetch(
+                          `https://restcountries.eu/rest/v2/name/${countryName}?fullText=true`
+                      );
+            // let res;
+            // if (countryName.length === 3) {
+            //     res = await fetch(
+            //         `https://restcountries.eu/rest/v2/alpha/${countryName}`
+            //     );
+            // } else {
+            //     res = await fetch(
+            //         `https://restcountries.eu/rest/v2/name/${countryName}?fullText=true`
+            //     );
+            // }
 
             const data = await res.json();
             setCountryData(data[0]);
         }
-        console.log(countryData);
         getCountryData();
     }, [countryName]);
 

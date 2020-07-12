@@ -40,7 +40,12 @@ export default function CountryPageInfo({ countryData }) {
                 <div data-testid="neighbor-countries">
                     borders:
                     {neighborCountries.map((country) => {
-                        return <NeighborLink country={country} key={country} />;
+                        return (
+                            <NeighborLink
+                                country3Code={country}
+                                key={country}
+                            />
+                        );
                     })}
                 </div>
             ) : (
