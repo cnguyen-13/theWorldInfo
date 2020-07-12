@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import BackButton from "./BackButton";
-import MainSection from "./MainSection";
+import BackButton from "./CountryPageComponents/BackButton";
+import MainSection from "./CountryPageComponents/MainSection";
 import { useParams } from "react-router-dom";
 
 export default function CountryPage() {
@@ -9,7 +9,6 @@ export default function CountryPage() {
     //CHeck for 3 letter code of countries as well
     useEffect(() => {
         async function getCountryData() {
-            console.log("ran");
             setCountryData(null);
             const res =
                 countryName.length === 3
@@ -19,16 +18,6 @@ export default function CountryPage() {
                     : await fetch(
                           `https://restcountries.eu/rest/v2/name/${countryName}?fullText=true`
                       );
-            // let res;
-            // if (countryName.length === 3) {
-            //     res = await fetch(
-            //         `https://restcountries.eu/rest/v2/alpha/${countryName}`
-            //     );
-            // } else {
-            //     res = await fetch(
-            //         `https://restcountries.eu/rest/v2/name/${countryName}?fullText=true`
-            //     );
-            // }
 
             const data = await res.json();
             setCountryData(data[0]);

@@ -3,7 +3,7 @@ import TopBar from "./TopBar/TopBar";
 import SearchArea from "./SearchArea/SearchArea";
 import CountryCardContainer from "./Cards/CountryCardContainer";
 import CountryPage from "./CountryPage/CountryPage";
-import { Link, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 function App() {
     const [theme, setTheme] = useState("light");

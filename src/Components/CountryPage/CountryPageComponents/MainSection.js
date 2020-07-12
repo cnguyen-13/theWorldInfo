@@ -6,7 +6,6 @@ export default function MainSection({ countryData }) {
     const flag = countryData.flag;
     const name = countryData.name;
 
-    //Might be some null data
     return (
         <div data-testid="country-page-main" className="country-page-main">
             <FlagImage src={flag} name={name} />

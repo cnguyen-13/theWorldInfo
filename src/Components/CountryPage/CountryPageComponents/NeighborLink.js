@@ -17,7 +17,7 @@ export default function NeighborLink({ country3Code }) {
     if (fullCountryName) {
         return (
             <Link to={`${fullCountryName}`}>
-                <button>{country3Code}</button>
+                <button className="neighbor-link-btn">{country3Code}</button>
             </Link>
         );
     }
