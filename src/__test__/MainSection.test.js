@@ -1,9 +1,8 @@
 import React from "react";
-import MainSection from "../Components/CountryPage/MainSection";
+import MainSection from "../Components/CountryPage/CountryPageComponents/MainSection";
 import { render, fireEvent, cleanup } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
-//https://restcountries.eu/rest/v2/all
-//`https://restcountries.eu/rest/v2/region/Oceania`
+
 afterEach(cleanup);
 //Testing Data
 for (let i = 0; i < 250; i++) {
@@ -50,7 +49,7 @@ for (let i = 0; i < 250; i++) {
         //Neighbor countries testing
         const neighborsList = getByTestId("neighbor-countries");
         expect(neighborsList.childElementCount).toBe(
-            neighboringCountries.length
-        );
+            neighboringCountries.length + 1
+        ); //The + 1 is for the strong tag text
     });
 }

@@ -2,6 +2,7 @@ import React from "react";
 import NeighborLink from "./NeighborLink";
 
 export default function CountryPageInfo({ countryData }) {
+    //Data to display
     const name = { label: "Name", data: countryData.name };
     const capital = { label: "Capital", data: countryData.capital };
     const region = { label: "Region", data: countryData.region };
@@ -13,6 +14,8 @@ export default function CountryPageInfo({ countryData }) {
         data: countryData.currencies[0].name,
     };
     const neighborCountries = countryData.borders;
+
+    //Put data to display in array to use .map function in return statement
     const dataArr = [
         name,
         capital,
@@ -26,34 +29,31 @@ export default function CountryPageInfo({ countryData }) {
     return (
         <div data-testid="country-page-info" className="country-page-info">
             {dataArr.map((property) => {
-                if (property.data) {
-                    return (
-                        <p
-                            className="country-page-info-line"
-                            key={property.label}
-                        >{`${property.label}: ${property.data}`}</p>
-                    );
-                }
-                return null;
+                return property.data ? (
+                    <p className="country-page-info-line" key={property.label}>
+                        <strong>{`${property.label}`}</strong>
+                        {`: ${property.data}`}
+                    </p>
+                ) : null;
             })}
 
-            {neighborCountries.length > 0 ? (
-                <div data-testid="neighbor-countries">
-                    borders:
-                    {neighborCountries.map((country) => {
-                        return (
-                            <NeighborLink
-                                country3Code={country}
-                                key={country}
-                            />
-                        );
-                    })}
-                </div>
-            ) : (
-                <div data-testid="neighbor-countries">
-                    No bordering countries
-                </div>
-            )}
+            <div data-testid="neighbor-countries">
+                {neighborCountries.length > 0 ? (
+                    <>
+                        <strong>Borders:</strong>
+                        {neighborCountries.map((country) => {
+                            return (
+                                <NeighborLink
+                                    country3Code={country}
+                                    key={country}
+                                />
+                            );
+                        })}
+                    </>
+                ) : (
+                    <strong>No bordering countries</strong>
+                )}
+            </div>
         </div>
     );
 }

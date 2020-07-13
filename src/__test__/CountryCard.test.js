@@ -80,7 +80,7 @@ const correctInfo = [
 test("Renders component correctly", () => {
     const { getByTestId, getAllByTestId } = render(
         <Router>
-            <CountryCard countryJson={testData} />
+            <CountryCard country={testData} />
         </Router>
     );
     const image = getByTestId("card-image");
