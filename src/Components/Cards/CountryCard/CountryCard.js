@@ -12,7 +12,7 @@ export default function CountryCard({ countryJson }) {
     const flagUrl = countryJson.flag;
 
     return (
-        <div className="card">
+        <div className="country-card">
             <CountryCardImage src={flagUrl} name={name} />
             <CountryCardText
                 name={name}

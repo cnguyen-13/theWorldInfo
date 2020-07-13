@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 export default function NeighborLink({ country3Code }) {
     const [fullCountryName, setFullCountryName] = useState(null);
+
+    //Gets full country name
     useEffect(() => {
         async function getFullName() {
             const res = await fetch(

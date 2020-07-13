@@ -36,6 +36,7 @@ export default function CountryPageInfo({ countryData }) {
                 }
                 return null;
             })}
+
             {neighborCountries.length > 0 ? (
                 <div data-testid="neighbor-countries">
                     borders:
