@@ -8,21 +8,51 @@ import { Switch, Route } from "react-router-dom";
 function App() {
     const [theme, setTheme] = useState("light");
     const [search, setSearch] = useState("");
-    const [region, setRegion] = useState("all");
-    const [allCountries, setAllCountries] = useState(null); //Just to store all data
+    const [region, setRegion] = useState("All");
     const [filteredData, setFilteredData] = useState(null);
 
     useEffect(() => {
         async function getAllCountries() {
             const res = await fetch(`https://restcountries.eu/rest/v2/all`);
             const data = await res.json();
-            setAllCountries(data);
             setFilteredData(data);
         }
 
         getAllCountries();
     }, []);
 
+    //Search functionality
+    useEffect(() => {
+        async function getFilteredData() {
+            if (region === "All") {
+                const res = await fetch(`https://restcountries.eu/rest/v2/all`);
+                const data = await res.json();
+                const newFilteredData = data.filter((country) => {
+                    return country.name
+                        .toLowerCase()
+                        .includes(search.toLowerCase());
+                });
+                setFilteredData(newFilteredData);
+            } else {
+                const regionRes = await fetch(
+                    `https://restcountries.eu/rest/v2/region/${region}`
+                );
+                const regionData = await regionRes.json();
+
+                //Search names
+                const newFilteredData = regionData.filter((country) => {
+                    return country.name
+                        .toLowerCase()
+                        .includes(search.toLowerCase());
+                });
+                setFilteredData(newFilteredData);
+            }
+        }
+
+        getFilteredData();
+    }, [region, search]);
+
+    //Change Theme
     function changeThemeFunc() {
         theme === "light" ? setTheme("dark") : setTheme("light");
     }
