@@ -8,10 +8,10 @@ export default function CountryCardText({ name, capital, region, population }) {
     ];
 
     return (
-        <div className="card-textarea">
+        <div className="country-card-text">
             <h2
-                data-testid="card-textarea-title"
-                className="card-textarea-title"
+                data-testid="country-card-text-title"
+                className="country-card-text-title"
             >
                 {name}
             </h2>
@@ -19,11 +19,13 @@ export default function CountryCardText({ name, capital, region, population }) {
             {data.map((info) => {
                 return (
                     <p
-                        data-testid="card-textarea-description"
-                        className="card-textarea-description"
+                        data-testid="country-card-text-info"
+                        className="country-card-text-info"
                         key={info.label}
                     >
-                        <strong>{info.label}: </strong>
+                        <strong className="country-card-text-info-label">
+                            {info.label}:{" "}
+                        </strong>
                         {info.data}
                     </p>
                 );

@@ -1,38 +1,37 @@
 import React, { useState, useEffect } from "react";
 import BackButton from "./CountryPageComponents/BackButton";
 import MainSection from "./CountryPageComponents/MainSection";
+import LoadingMessage from "../Messages/LoadingMessage";
 import { useParams } from "react-router-dom";
 
 export default function CountryPage() {
     const { countryName } = useParams();
-    const [countryData, setCountryData] = useState(null);
-    //CHeck for 3 letter code of countries as well
+    const [country, setCountry] = useState(null);
+
+    //Fetching country data based off of countryName URL param
     useEffect(() => {
         async function getCountryData() {
-            setCountryData(null);
-            const res =
-                countryName.length === 3
-                    ? await fetch(
-                          `https://restcountries.eu/rest/v2/alpha/${countryName}`
-                      )
-                    : await fetch(
-                          `https://restcountries.eu/rest/v2/name/${countryName}?fullText=true`
-                      );
+            setCountry(null);
+            const res = await fetch(
+                `https://restcountries.eu/rest/v2/name/${countryName}?fullText=true`
+            );
 
             const data = await res.json();
-            setCountryData(data[0]);
+            const country = data[0];
+            setCountry(country);
         }
+
         getCountryData();
     }, [countryName]);
 
-    if (countryData) {
+    if (country) {
         return (
             <div className="country-page">
                 <BackButton />
-                <MainSection countryData={countryData} />
+                <MainSection country={country} />
             </div>
         );
     } else {
-        return <div>Loading...</div>;
+        return <LoadingMessage />;
     }
 }

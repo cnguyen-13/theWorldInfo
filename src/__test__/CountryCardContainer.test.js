@@ -17,15 +17,15 @@ for (let i = 0; i < testingJsonUrls.length; i++) {
     test(`Render component correctly with Link: ${testingJsonUrls[i]}`, async () => {
         const res = await fetch(testingJsonUrls[i]);
         const data = await res.json();
-        const testingData = data;
-        const numberOfCountries = testingData.length;
+        const countries = data;
         const { getByTestId } = render(
             <Router>
-                <CountryCardContainer countries={testingData} />
+                <CountryCardContainer countries={countries} />
             </Router>
         );
         const container = getByTestId("country-cards-container");
         const childrenCount = container.childElementCount;
+        const numberOfCountries = countries.length;
         expect(childrenCount).toBe(numberOfCountries);
     });
 }

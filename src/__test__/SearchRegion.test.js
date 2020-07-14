@@ -1,6 +1,6 @@
 import React from "react";
 import { render, fireEvent, cleanup } from "@testing-library/react";
-import SearchRegion from "../Components/SearchArea/SearchRegion";
+import SearchRegion from "../Components/SearchArea/SearchAreaComponents/SearchRegion";
 
 //Testing data
 let regionState = "";
@@ -18,11 +18,11 @@ afterEach(cleanup);
 //Tests
 test("Render Component correctly", () => {
     const { getByTestId, getAllByTestId } = render(
-        <SearchRegion onChangeRegionInput={testingFunction} />
+        <SearchRegion userRegionFunc={testingFunction} />
     );
-    const label = getByTestId("region-selector-label");
-    const select = getByTestId("region-selector");
-    const options = getAllByTestId("region-selector-option");
+    const label = getByTestId("search-area-region-menu-label");
+    const select = getByTestId("search-area-region-menu");
+    const options = getAllByTestId("search-area-region-menu-option");
     expect(label.textContent).toBe("Filter by Region:");
     //Defaulted selected value of 'All'
     for (let i = 0; i < regionsArr.length; i++) {
@@ -40,18 +40,22 @@ test("Render Component correctly", () => {
 
 test("Changing Select Dropdown list correctly", () => {
     const { getByTestId, getAllByTestId } = render(
-        <SearchRegion onChangeRegionInput={testingFunction} />
+        <SearchRegion userRegionFunc={testingFunction} />
     );
 
-    const select = getByTestId("region-selector");
-    const options = getAllByTestId("region-selector-option");
+    const select = getByTestId("search-area-region-menu");
+    const options = getAllByTestId("search-area-region-menu-option");
     for (let i = 0; i < regionsArr.length; i++) {
         fireEvent.change(select, { target: { value: regionsArr[i] } });
         for (let j = 0; j < regionsArr.length; j++) {
-            const selected = options[j].selected;
-            j === i
-                ? expect(selected).toBeTruthy()
-                : expect(selected).toBeFalsy();
+            const selected = options[j].selected; //is this selected?
+            if (i === j) {
+                expect(selected).toBeTruthy();
+                expect(regionState).toBe(regionsArr[i]);
+            } else {
+                expect(selected).toBeFalsy();
+                expect(regionState).not.toBe(regionsArr[j]);
+            }
         }
     }
 });

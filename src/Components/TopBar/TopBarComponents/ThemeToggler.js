@@ -1,13 +1,13 @@
 import React from "react";
 
-export default function ThemeToggler({ theme, themeTogglerFunc }) {
+export default function ThemeToggler({ changeThemeFunc, theme }) {
     return (
-        <div className="switch">
+        <div className="top-bar-theme-toggler">
             <input
                 id="theme-checkbox"
                 data-testid="theme-checkbox"
                 type="checkbox"
-                onClick={themeTogglerFunc}
+                onClick={changeThemeFunc}
             ></input>
             <label htmlFor="theme-checkbox" data-testid="theme-value">
                 {theme}

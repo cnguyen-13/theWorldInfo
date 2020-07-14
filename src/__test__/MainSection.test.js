@@ -13,18 +13,18 @@ for (let i = 0; i < 250; i++) {
 
         const { getByTestId } = render(
             <Router>
-                <MainSection countryData={country} />
+                <MainSection country={country} />
             </Router>
         );
         const wrapperDiv = getByTestId("country-page-main");
-        const flagImg = getByTestId("country-page-image");
-        const info = getByTestId("country-page-info");
+        const flagImg = getByTestId("country-page-main-image");
+        const info = getByTestId("country-page-main-info");
         //main div checking
         expect(wrapperDiv.childElementCount).toBe(2);
         expect(wrapperDiv.classList.contains("country-page-main")).toBeTruthy();
         //Flag checking
         expect(flagImg.src).toBe(country.flag);
-        expect(flagImg.alt).toBe(country.name);
+        expect(flagImg.alt).toBe(`${country.name} Flag`);
         //information checking
         const dataArr = [
             { label: "Name", data: country.name },

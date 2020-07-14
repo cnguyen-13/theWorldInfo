@@ -1,5 +1,5 @@
 import React from "react";
-import ThemeToggler from "../Components/TopBar/ThemeToggler";
+import ThemeToggler from "../Components/TopBar/TopBarComponents/ThemeToggler";
 import { render, fireEvent, cleanup } from "@testing-library/react";
 
 //Testing Data
@@ -26,7 +26,7 @@ test("Render Correctly", () => {
 
 test("Toggle Theme Correctly", () => {
     const { getByTestId } = render(
-        <ThemeToggler theme="light" themeTogglerFunc={changeTestingData} />
+        <ThemeToggler theme="light" changeThemeFunc={changeTestingData} />
     );
     const checkbox = getByTestId("theme-checkbox");
     //Toggling test

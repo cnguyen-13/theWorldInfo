@@ -10,8 +10,8 @@ export default function NeighborLink({ country3Code }) {
             const res = await fetch(
                 `https://restcountries.eu/rest/v2/alpha/${country3Code}`
             );
-            const data = await res.json();
-            setFullCountryName(data.name);
+            const country = await res.json();
+            setFullCountryName(country.name);
         }
 
         getFullName();
@@ -19,7 +19,9 @@ export default function NeighborLink({ country3Code }) {
 
     return (
         <Link to={`${fullCountryName}`}>
-            <button className="neighbor-link-btn">{country3Code}</button>
+            <button className="country-page-main-info-neighbors-link">
+                {country3Code}
+            </button>
         </Link>
     );
 }

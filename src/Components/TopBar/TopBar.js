@@ -1,12 +1,12 @@
 import React from "react";
-import LogoTitle from "./LogoTitle";
-import ThemeToggler from "./ThemeToggler";
+import LogoTitle from "./TopBarComponents/LogoTitle";
+import ThemeToggler from "./TopBarComponents/ThemeToggler";
 
-export default function TopBar({ themeTogglerFunc, theme }) {
+export default function TopBar({ changeThemeFunc, theme }) {
     return (
-        <header className="app-header">
+        <header className="top-bar">
             <LogoTitle />
-            <ThemeToggler themeTogglerFunc={themeTogglerFunc} theme={theme} />
+            <ThemeToggler changeThemeFunc={changeThemeFunc} theme={theme} />
         </header>
     );
 }

@@ -3,21 +3,23 @@ import TopBar from "./TopBar/TopBar";
 import SearchArea from "./SearchArea/SearchArea";
 import CountryCardContainer from "./Cards/CountryCardContainer";
 import CountryPage from "./CountryPage/CountryPage";
+import CountriesNotFound from './Messages/CountriesNotFound';
 import { Switch, Route } from "react-router-dom";
 import "../styles/styles.css";
 
+//countries and all api calls will result in returning AN ARRAY OF OBJECTS
 export default function App() {
     const [theme, setTheme] = useState("light");
     const [search, setSearch] = useState("");
     const [region, setRegion] = useState("All");
-    const [filteredData, setFilteredData] = useState([]);
+    const [countries, setCountries] = useState([]);
 
     //Initial Data
     useEffect(() => {
         async function getAllCountries() {
             const res = await fetch(`https://restcountries.eu/rest/v2/all`);
-            const data = await res.json();
-            setFilteredData(data);
+            const countries = await res.json();
+            setCountries(countries);
         }
 
         getAllCountries();
@@ -25,23 +27,23 @@ export default function App() {
 
     //Search functionality
     useEffect(() => {
-        async function getFilteredData() {
+        async function searchCountries() {
             const res =
                 region === "All"
                     ? await fetch(`https://restcountries.eu/rest/v2/all`)
                     : await fetch(
                           `https://restcountries.eu/rest/v2/region/${region}`
                       );
-            const data = await res.json();
-            const newFilteredData = data.filter((country) => {
+            const countries = await res.json();
+            const filteredCountries = countries.filter((country) => {
                 return country.name
                     .toLowerCase()
                     .includes(search.toLowerCase());
             });
-            setFilteredData(newFilteredData);
+            setCountries(filteredCountries);
         }
 
-        getFilteredData();
+        searchCountries();
     }, [region, search]);
 
     //Change Theme
@@ -50,22 +52,22 @@ export default function App() {
     }
 
     //Change Searched countries
-    function onChangeTextInput(e) {
-        const typedText = e.target.value;
-        setSearch(typedText);
+    function userSearchFunc(e) {
+        const userSearchInput = e.target.value;
+        setSearch(userSearchInput);
     }
 
     //Change Regions
-    function onChangeRegionInput(e) {
-        const select = e.target;
-        const idx = select.selectedIndex;
-        const region = select.options[idx].value;
-        setRegion(region);
+    function userRegionFunc(e) {
+        const dropdownMenu = e.target;
+        const idx = dropdownMenu.selectedIndex;
+        const selectedRegion = dropdownMenu.options[idx].value;
+        setRegion(selectedRegion);
     }
 
     return (
         <div className="app">
-            <TopBar themeTogglerFunc={changeThemeFunc} theme={theme} />
+            <TopBar changeThemeFunc={changeThemeFunc} theme={theme} />
 
             <Switch>
                 <Route path="/:countryName">
@@ -73,15 +75,13 @@ export default function App() {
                 </Route>
                 <Route path="/">
                     <SearchArea
-                        onChangeTextInput={onChangeTextInput}
-                        onChangeRegionInput={onChangeRegionInput}
+                        userSearchFunc={userSearchFunc}
+                        userRegionFunc={userRegionFunc}
                     />
-                    {filteredData.length > 0 ? (
-                        <CountryCardContainer countries={filteredData} />
+                    {countries.length > 0 ? (
+                        <CountryCardContainer countries={countries} />
                     ) : (
-                        <p className="no-countries-found">
-                            No countries found!
-                        </p>
+                        <CountriesNotFound />
                     )}
                 </Route>
             </Switch>

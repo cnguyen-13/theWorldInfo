@@ -2,14 +2,14 @@ import React from "react";
 import FlagImage from "./FlagImage";
 import CountryPageInfo from "./CountryPageInfo";
 
-export default function MainSection({ countryData }) {
-    const flag = countryData.flag;
-    const name = countryData.name;
+export default function MainSection({ country }) {
+    const flagUrl = country.flag;
+    const name = country.name;
 
     return (
         <div data-testid="country-page-main" className="country-page-main">
-            <FlagImage src={flag} name={name} />
-            <CountryPageInfo countryData={countryData} />
+            <FlagImage flagUrl={flagUrl} name={name} />
+            <CountryPageInfo country={country} />
         </div>
     );
 }

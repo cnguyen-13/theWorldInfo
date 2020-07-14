@@ -1,22 +1,21 @@
 import React from "react";
-import NeighborLink from "./NeighborLink";
+import InfoLines from "./InfoLines";
+import BorderCountries from "./BorderCountries";
 
-export default function CountryPageInfo({ countryData }) {
+export default function CountryPageInfo({ country }) {
     //Data to display
-    const name = { label: "Name", data: countryData.name };
-    const capital = { label: "Capital", data: countryData.capital };
-    const region = { label: "Region", data: countryData.region };
-    const subRegion = { label: "Subregion", data: countryData.subregion };
-    const population = { label: "Population", data: countryData.population };
-    const area = { label: "Area", data: countryData.area };
+    const name = { label: "Name", data: country.name };
+    const capital = { label: "Capital", data: country.capital };
+    const region = { label: "Region", data: country.region };
+    const subRegion = { label: "Subregion", data: country.subregion };
+    const population = { label: "Population", data: country.population };
+    const area = { label: "Area", data: country.area };
     const currency = {
         label: "Currency",
-        data: countryData.currencies[0].name,
+        data: country.currencies[0].name,
     };
-    const neighborCountries = countryData.borders;
-
     //Put data to display in array to use .map function in return statement
-    const dataArr = [
+    const countryProperties = [
         name,
         capital,
         region,
@@ -26,34 +25,15 @@ export default function CountryPageInfo({ countryData }) {
         currency,
     ];
 
-    return (
-        <div data-testid="country-page-info" className="country-page-info">
-            {dataArr.map((property) => {
-                return property.data ? (
-                    <p className="country-page-info-line" key={property.label}>
-                        <strong>{`${property.label}`}</strong>
-                        {`: ${property.data}`}
-                    </p>
-                ) : null;
-            })}
+    const neighborCountries = country.borders;
 
-            <div data-testid="neighbor-countries">
-                {neighborCountries.length > 0 ? (
-                    <>
-                        <strong>Borders:</strong>
-                        {neighborCountries.map((country) => {
-                            return (
-                                <NeighborLink
-                                    country3Code={country}
-                                    key={country}
-                                />
-                            );
-                        })}
-                    </>
-                ) : (
-                    <strong>No bordering countries</strong>
-                )}
-            </div>
+    return (
+        <div
+            data-testid="country-page-main-info"
+            className="country-page-main-info"
+        >
+            <InfoLines countryProperties={countryProperties} />
+            <BorderCountries neighborCountries={neighborCountries} />
         </div>
     );
 }
