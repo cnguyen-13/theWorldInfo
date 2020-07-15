@@ -1,42 +1,50 @@
 //Container
 .country-cards-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
-    max-width: 1700px;
-    margin: 0 auto;
+    padding: $padding-containers;
+    @include max-width-centered();
 }
 
 //Cards
 .country-card {
     margin: 20px;
     width: 325px;
-    height: 400px;
+    height: 450px;
+    border-radius: 5px;
     // border: 1px solid black;
     background-color: #2b3743;
 }
 
 //Image
 .country-card-image {
+    border-radius: 5px 5px 0px 0px;
     display: block;
-    margin: 0 auto;
-    width: 323px;
-    //height: 220px;
+    width: 325px;
+    height: 200px;
+    object-fit: cover;
 }
 
 //Text
 .country-card-text {
+    margin: 10px 20px;
+    margin-bottom: 0;
 }
 
 .country-card-text-title {
+    margin-bottom: 10px;
 }
 
 .country-card-text-info-label {
 }
 
 .country-card-text-info {
+    margin-bottom: 5px;
 }
 
 //Button
 .country-card-btn {
+    @include button-styling();
 }

@@ -1,25 +1,27 @@
 .search-area {
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    height: 80px;
+    padding: $padding-containers;
 }
 
-
-//Search bar 
+.search-area-sub-container {
+    @include flex-space-between-centered();
+    @include max-width-centered();
+}
+//Search bar
 .search-area-search-bar {
-
+    @include search-area-input();
 }
 
-//Search Region 
+//Search Region
 .search-area-region-menu-label {
-
+    font-weight: bold;
+    margin-right: 10px;
 }
 
 .search-area-region-menu {
-
+    @include search-area-input();
 }
 
 .search-area-region-menu-option {
-    
+    color: $color-dt-black-text;
 }

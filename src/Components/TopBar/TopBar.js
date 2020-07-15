@@ -5,8 +5,10 @@ import ThemeToggler from "./TopBarComponents/ThemeToggler";
 export default function TopBar({ changeThemeFunc, theme }) {
     return (
         <header className="top-bar">
-            <LogoTitle />
-            <ThemeToggler changeThemeFunc={changeThemeFunc} theme={theme} />
+            <div className="top-bar-sub-container">
+                <LogoTitle />
+                <ThemeToggler changeThemeFunc={changeThemeFunc} theme={theme} />
+            </div>
         </header>
     );
 }

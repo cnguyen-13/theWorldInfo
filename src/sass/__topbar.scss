@@ -1,20 +1,19 @@
 .top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100px;
-    padding: 20px;
-    background-color: #2b3743;
+    height: 80px;
+    padding: $padding-containers;
+    background-color: $color-dt-bright;
+}
+
+.top-bar-sub-container {
+    @include flex-space-between-centered();
+    @include max-width-centered();
 }
 
 .top-bar-title {
-
 }
 
 .top-bar-theme-toggler {
-
 }
 
 #top-bar-theme-checkbox {
-
 }

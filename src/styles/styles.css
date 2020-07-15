@@ -1,9 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 html {
   background-color: #202d36;
-  color: #eee;
 }
 
 * {
+  color: #eee;
+  font-family: "Lato", sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0;
@@ -11,19 +13,11 @@ html {
 }
 
 .search-area {
-  padding: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  height: 80px;
+  padding: 25px;
 }
 
-.app-header {
+.search-area-sub-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -33,33 +27,105 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100px;
-  padding: 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.search-area-search-bar {
+  padding: 10px 25px;
+  color: #333;
+}
+
+.search-area-region-menu-label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.search-area-region-menu {
+  padding: 10px 25px;
+  color: #333;
+}
+
+.search-area-region-menu-option {
+  color: #333;
+}
+
+.top-bar {
+  height: 80px;
+  padding: 25px;
   background-color: #2b3743;
+}
+
+.top-bar-sub-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .country-cards-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  max-width: 1700px;
+  padding: 25px;
+  max-width: 1600px;
   margin: 0 auto;
 }
 
 .country-card {
   margin: 20px;
   width: 325px;
-  height: 400px;
+  height: 450px;
+  border-radius: 5px;
   background-color: #2b3743;
 }
 
 .country-card-image {
+  border-radius: 5px 5px 0px 0px;
   display: block;
-  margin: 0 auto;
-  width: 323px;
+  width: 325px;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.country-card-text {
+  margin: 10px 20px;
+  margin-bottom: 0;
+}
+
+.country-card-text-title {
+  margin-bottom: 10px;
+}
+
+.country-card-text-info {
+  margin-bottom: 5px;
+}
+
+.country-card-btn {
+  margin-left: 20px;
+  margin-top: 10px;
+  border: none;
+  padding: 8px 12px;
+  background-color: #e67e22;
+  text-transform: uppercase;
+  border-radius: 2px;
+  font-weight: bold;
+  cursor: pointer;
 }
 /*# sourceMappingURL=styles.css.map */

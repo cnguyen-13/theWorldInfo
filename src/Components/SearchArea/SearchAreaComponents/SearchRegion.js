@@ -10,7 +10,7 @@ export default function SearchRegion({ userRegionFunc }) {
                 data-testid="search-area-region-menu-label"
                 className="search-area-region-menu-label"
             >
-                Filter by Region:
+                Region:
             </label>
             <select
                 id="search-area-region-selector"

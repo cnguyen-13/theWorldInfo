@@ -1,3 +1,49 @@
-//Colors
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 
-//Font
+//Colors
+$color-call-to-action: #e67e22;
+//Light
+
+//Dark
+$color-dt-text: #eee;
+$color-dt-bright: #2b3743;
+$color-dt-dark: rgb(32, 45, 54);
+$color-dt-black-text: #333;
+$color-dt-white-text: #eee;
+
+//Padding
+$padding-containers: 25px;
+$padding-search-bar: 10px 25px;
+$padding-button: 8px 12px;
+
+//Fonts
+$font-main: "Lato", sans-serif;
+
+//Utilities
+@mixin flex-space-between-centered() {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin max-width-centered() {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+@mixin search-area-input() {
+    padding: $padding-search-bar;
+    color: $color-dt-black-text;
+}
+
+@mixin button-styling() {
+    margin-left: 20px;
+    margin-top: 10px;
+    border: none;
+    padding: $padding-button;
+    background-color: $color-call-to-action;
+    text-transform: uppercase;
+    border-radius: 2px;
+    font-weight: bold;
+    cursor: pointer;
+}
