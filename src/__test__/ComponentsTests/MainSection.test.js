@@ -2,6 +2,7 @@ import React from "react";
 import MainSection from "../../Components/CountryPage/CountryPageComponents/MainSection";
 import { render, fireEvent, cleanup } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
+const addCommasToNumber = require("../../HelperFunctions/addCommasToNumber");
 
 afterEach(cleanup);
 //Testing Data
@@ -31,8 +32,11 @@ for (let i = 0; i < 250; i++) {
             { label: "Capital", data: country.capital },
             { label: "Region", data: country.region },
             { label: "Subregion", data: country.subregion },
-            { label: "Population", data: country.population },
-            { label: "Area", data: country.area },
+            {
+                label: "Population",
+                data: addCommasToNumber(country.population),
+            },
+            { label: "Area", data: addCommasToNumber(country.area) },
             {
                 label: "Currency",
                 data: country.currencies[0].name,

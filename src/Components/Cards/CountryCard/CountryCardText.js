@@ -1,10 +1,11 @@
 import React from "react";
+const addCommasToNumber = require("../../../HelperFunctions/addCommasToNumber");
 
 export default function CountryCardText({ name, capital, region, population }) {
     const data = [
         { label: "Capital", data: capital },
         { label: "Region", data: region },
-        { label: "Population", data: population },
+        { label: "Population", data: addCommasToNumber(population) },
     ];
 
     return (

@@ -10,7 +10,5 @@ test("Testing addCommasToNumber Function:", () => {
     expect(addCommasToNumber(52912)).toBe("52,912");
     expect(addCommasToNumber(952912)).toBe("952,912");
     expect(addCommasToNumber(8157212)).toBe("8,157,212");
-    expect(addCommasToNumber(189572891521231232)).toBe(
-        "189,572,891,521,231,232"
-    );
+    expect(addCommasToNumber(189572891521)).toBe("189,572,891,521");
 });

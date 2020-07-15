@@ -2,7 +2,7 @@ import React from "react";
 import CountryCard from "../../Components/Cards/CountryCard/CountryCard";
 import { render, cleanup } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
-
+const addCommasToNumber = require("../../HelperFunctions/addCommasToNumber");
 afterEach(cleanup);
 
 //Tests
@@ -13,7 +13,7 @@ test("Renders component correctly", async () => {
     const correctInfo = [
         `Capital: ${testData.capital}`,
         `Region: ${testData.region}`,
-        `Population: ${testData.population}`,
+        `Population: ${addCommasToNumber(testData.population)}`,
     ];
 
     //Render component and test it

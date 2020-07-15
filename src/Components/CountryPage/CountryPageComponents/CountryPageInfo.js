@@ -1,6 +1,7 @@
 import React from "react";
 import InfoLines from "./InfoLines";
 import BorderCountries from "./BorderCountries";
+const addCommasToNumber = require("../../../HelperFunctions/addCommasToNumber");
 
 export default function CountryPageInfo({ country }) {
     //Data to display
@@ -8,8 +9,11 @@ export default function CountryPageInfo({ country }) {
     const capital = { label: "Capital", data: country.capital };
     const region = { label: "Region", data: country.region };
     const subRegion = { label: "Subregion", data: country.subregion };
-    const population = { label: "Population", data: country.population };
-    const area = { label: "Area", data: country.area };
+    const population = {
+        label: "Population",
+        data: addCommasToNumber(country.population),
+    };
+    const area = { label: "Area", data: addCommasToNumber(country.area) };
     const currency = {
         label: "Currency",
         data: country.currencies[0].name,
