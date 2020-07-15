@@ -1,5 +1,5 @@
 import React from "react";
-import SearchBar from "../Components/SearchArea/SearchAreaComponents/SearchBar";
+import SearchBar from "../../Components/SearchArea/SearchAreaComponents/SearchBar";
 import { render, fireEvent, cleanup } from "@testing-library/react";
 
 //Testing Data

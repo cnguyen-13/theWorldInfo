@@ -1,6 +1,6 @@
 import React from "react";
 import { render, fireEvent, cleanup } from "@testing-library/react";
-import SearchRegion from "../Components/SearchArea/SearchAreaComponents/SearchRegion";
+import SearchRegion from "../../Components/SearchArea/SearchAreaComponents/SearchRegion";
 
 //Testing data
 let regionState = "";

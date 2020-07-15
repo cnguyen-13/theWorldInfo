@@ -1,5 +1,5 @@
 import React from "react";
-import ThemeToggler from "../Components/TopBar/TopBarComponents/ThemeToggler";
+import ThemeToggler from "../../Components/TopBar/TopBarComponents/ThemeToggler";
 import { render, fireEvent, cleanup } from "@testing-library/react";
 
 //Testing Data

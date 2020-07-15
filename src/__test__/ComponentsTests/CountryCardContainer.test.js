@@ -1,5 +1,5 @@
 import React from "react";
-import CountryCardContainer from "../Components/Cards/CountryCardContainer";
+import CountryCardContainer from "../../Components/Cards/CountryCardContainer";
 import { render, cleanup } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 
