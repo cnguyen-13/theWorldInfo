@@ -1,6 +1,6 @@
 import React from "react";
 import MainSection from "../../Components/CountryPage/CountryPageComponents/MainSection";
-import { render, fireEvent, cleanup } from "@testing-library/react";
+import { render, cleanup } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 const addCommasToNumber = require("../../HelperFunctions/addCommasToNumber");
 

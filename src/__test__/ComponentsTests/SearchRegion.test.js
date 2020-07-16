@@ -23,7 +23,7 @@ test("Render Component correctly", () => {
     const label = getByTestId("search-area-region-menu-label");
     const select = getByTestId("search-area-region-menu");
     const options = getAllByTestId("search-area-region-menu-option");
-    expect(label.textContent).toBe("Filter by Region:");
+    expect(label.textContent).toBe("Region:");
     //Defaulted selected value of 'All'
     for (let i = 0; i < regionsArr.length; i++) {
         const selected = options[i].selected;

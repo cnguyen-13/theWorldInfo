@@ -9,7 +9,15 @@
     @include max-width-centered();
 }
 
+.no-decoration {
+    text-decoration: none;
+}
+
 .top-bar-title {
+    text-decoration: none;
+    &:hover {
+        transform: scale(1.05);
+    }
 }
 
 .top-bar-theme-toggler {

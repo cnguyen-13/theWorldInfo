@@ -5,7 +5,7 @@ const addCommasToNumber = require("../../../HelperFunctions/addCommasToNumber");
 
 export default function CountryPageInfo({ country }) {
     //Data to display
-    const name = { label: "Name", data: country.name };
+    const name = country.name;
     const capital = { label: "Capital", data: country.capital };
     const region = { label: "Region", data: country.region };
     const subRegion = { label: "Subregion", data: country.subregion };
@@ -20,7 +20,6 @@ export default function CountryPageInfo({ country }) {
     };
     //Put data to display in array to use .map function in return statement
     const countryProperties = [
-        name,
         capital,
         region,
         subRegion,
@@ -36,7 +35,7 @@ export default function CountryPageInfo({ country }) {
             data-testid="country-page-main-info"
             className="country-page-main-info"
         >
-            <InfoLines countryProperties={countryProperties} />
+            <InfoLines name={name} countryProperties={countryProperties} />
             <BorderCountries neighborCountries={neighborCountries} />
         </div>
     );

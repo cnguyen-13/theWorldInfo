@@ -14,7 +14,6 @@
     width: 325px;
     height: 450px;
     border-radius: 5px;
-    // border: 1px solid black;
     background-color: #2b3743;
 }
 
@@ -25,6 +24,7 @@
     width: 325px;
     height: 200px;
     object-fit: cover;
+    margin-bottom: 15px;
 }
 
 //Text
@@ -34,17 +34,20 @@
 }
 
 .country-card-text-title {
-    margin-bottom: 10px;
+    margin-bottom: $margin-bottom-titles;
 }
 
 .country-card-text-info-label {
 }
 
 .country-card-text-info {
-    margin-bottom: 5px;
+    margin-bottom: $margin-bottom-titles / 2;
 }
 
 //Button
 .country-card-btn {
     @include button-styling();
+    &:hover {
+        background-color: darken($color-call-to-action, 20);
+    }
 }

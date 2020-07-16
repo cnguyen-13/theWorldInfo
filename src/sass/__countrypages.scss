@@ -1,8 +1,18 @@
 .country-page {
+    padding: $padding-containers;
+}
+
+.country-page-sub-container {
+    @include max-width-centered();
 }
 
 //Back button
 .country-page-back-btn {
+    @include max-width-centered();
+    @include button-styling();
+    margin-left: 0;
+    background-color: $color-dt-bright;
+    margin: 20px 0 30px 0;
 }
 
 //Main Text Container
@@ -11,13 +21,19 @@
 
 //Flag Image
 .country-page-main-image {
+    display: block;
+    width: 100%;
 }
 
 //Text
 .country-page-main-info {
 }
-
+.country-page-main-info-line-name {
+    font-size: 40px;
+    margin: 30px 0;
+}
 .country-page-main-info-line {
+    margin: 15px 0;
 }
 
 //Bordering Countries
@@ -25,4 +41,31 @@
 }
 
 .country-page-main-info-neighbors-link {
+    @include button-styling();
+    margin-left: 0;
+    margin-right: 20px;
+    &:hover {
+        background-color: darken($color-call-to-action, 20);
+    }
+}
+
+.country-page-main-info-neighbors-label {
+    display: block;
+}
+
+@media (min-width: 1000px) {
+    .country-page-main-image {
+        width: 50%;
+        margin-right: 100px;
+        height: auto;
+    }
+    .country-page-main {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .country-page-main {
+        display: flex;
+        align-items: flex-start;
+    }
 }

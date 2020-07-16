@@ -10,7 +10,9 @@ export default function BorderCountries({ neighborCountries }) {
         >
             {neighborCountries.length > 0 ? (
                 <>
-                    <strong>Borders:</strong>
+                    <strong className="country-page-main-info-neighbors-label country-page-main-info-line">
+                        Borders:
+                    </strong>
                     {neighborCountries.map((country) => {
                         return (
                             <NeighborLink
