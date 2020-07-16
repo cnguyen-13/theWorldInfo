@@ -24,9 +24,7 @@ export default function CountryCardText({ name, capital, region, population }) {
                         className="country-card-text-info"
                         key={info.label}
                     >
-                        <strong className="country-card-text-info-label">
-                            {info.label}:{" "}
-                        </strong>
+                        <strong>{info.label}: </strong>
                         {info.data}
                     </p>
                 );

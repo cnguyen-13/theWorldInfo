@@ -1,11 +1,10 @@
 //Container
 .country-cards-container {
-    display: flex;
+    @include max-width-centered();
+    @include flex-space-between-centered();
     justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
     padding: $padding-containers;
-    @include max-width-centered();
 }
 
 //Cards
@@ -13,15 +12,15 @@
     margin: 20px;
     width: 325px;
     height: 450px;
-    border-radius: 5px;
-    background-color: #2b3743;
+    border-radius: $radius-border;
+    background-color: $color-dt-bright;
 }
 
 //Image
 .country-card-image {
-    border-radius: 5px 5px 0px 0px;
+    border-radius: $radius-border $radius-border 0px 0px;
     display: block;
-    width: 325px;
+    width: 100%;
     height: 200px;
     object-fit: cover;
     margin-bottom: 15px;
@@ -37,9 +36,6 @@
     margin-bottom: $margin-bottom-titles;
 }
 
-.country-card-text-info-label {
-}
-
 .country-card-text-info {
     margin-bottom: $margin-bottom-titles / 2;
 }
@@ -48,6 +44,6 @@
 .country-card-btn {
     @include button-styling();
     &:hover {
-        background-color: darken($color-call-to-action, 20);
+        background-color: darken($color-dt-call-to-action, 20);
     }
 }

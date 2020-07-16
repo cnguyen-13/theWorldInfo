@@ -1,14 +1,16 @@
 .search-area {
-    height: 80px;
+    height: $height-topbar-search;
     padding: $padding-containers;
+    padding-top: $padding-page-offset + 20px;
 }
 
 .search-area-sub-container {
     @include flex-space-between-centered();
     @include max-width-centered();
 }
-//Search bar
-.search-area-search-bar {
+//Search bar & Menu
+.search-area-search-bar,
+.search-area-region-menu {
     @include search-area-input();
 }
 
@@ -18,10 +20,7 @@
     margin-right: 10px;
 }
 
-.search-area-region-menu {
-    @include search-area-input();
-}
-
+//Menu
 .search-area-region-menu-option {
     color: $color-dt-black-text;
 }

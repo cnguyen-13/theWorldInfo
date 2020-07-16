@@ -4,10 +4,7 @@ import NoBorderCountriesMessage from "../../Messages/NoBorderCountriesMessage";
 
 export default function BorderCountries({ neighborCountries }) {
     return (
-        <div
-            data-testid="neighbor-countries"
-            className="country-page-main-info-neighbors"
-        >
+        <div data-testid="neighbor-countries">
             {neighborCountries.length > 0 ? (
                 <>
                     <strong className="country-page-main-info-neighbors-label country-page-main-info-line">

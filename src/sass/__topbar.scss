@@ -1,7 +1,10 @@
 .top-bar {
-    height: 80px;
+    height: $height-topbar-search;
     padding: $padding-containers;
     background-color: $color-dt-bright;
+    border-bottom: 2px solid $color-dt-divider;
+    position: fixed;
+    width: 100%;
 }
 
 .top-bar-sub-container {
@@ -9,12 +12,7 @@
     @include max-width-centered();
 }
 
-.no-decoration {
-    text-decoration: none;
-}
-
 .top-bar-title {
-    text-decoration: none;
     &:hover {
         transform: scale(1.05);
     }

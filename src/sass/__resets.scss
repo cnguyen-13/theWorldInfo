@@ -1,11 +1,17 @@
-html {
-    background-color: $color-dt-dark;
-}
-
 * {
-    color: $color-dt-text;
+    color: $color-dt-white-text;
     font-family: $font-main;
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+}
+
+html {
+    background-color: $color-dt-dark;
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
 }
