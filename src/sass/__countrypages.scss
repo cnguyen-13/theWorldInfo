@@ -42,6 +42,7 @@
 //Bordering Countries
 .country-page-main-info-neighbors-link {
     @include button-styling();
+    background-color: $color-dt-call-to-action;
     margin: 10px 20px 0 0;
     &:hover {
         background-color: darken($color-dt-call-to-action, 20);

@@ -43,6 +43,7 @@
 //Button
 .country-card-btn {
     @include button-styling();
+    background-color: $color-dt-call-to-action;
     &:hover {
         background-color: darken($color-dt-call-to-action, 20);
     }

@@ -1,0 +1,46 @@
+//Everything dealing with color
+* {
+    color: $color-dt-white-text;
+}
+
+html {
+    background-color: $color-dt-html-bg;
+}
+
+//Top Bar
+.top-bar {
+    background-color: $color-dt-header-card-bg;
+    border-bottom: 1px solid $color-dt-divider;
+}
+
+//Search Area
+.search-area-region-menu-option {
+    color: $color-dt-black-text;
+}
+
+//Cards
+.country-card {
+    background-color: $color-dt-header-card-bg;
+}
+
+.country-card-btn {
+    background-color: $color-dt-call-to-action;
+    &:hover {
+        background-color: darken($color-dt-call-to-action, 20);
+    }
+}
+
+//Pages
+.country-page-back-btn {
+    background-color: $color-dt-header-card-bg;
+    &:hover {
+        background-color: $color-dt-call-to-action;
+    }
+}
+
+.country-page-main-info-neighbors-link {
+    background-color: $color-dt-call-to-action;
+    &:hover {
+        background-color: darken($color-dt-call-to-action, 20);
+    }
+}
