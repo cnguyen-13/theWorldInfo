@@ -1,8 +1,8 @@
 .top-bar {
     height: $height-topbar-search;
     padding: $padding-containers;
-    background-color: $color-dt-bright;
-    border-bottom: 2px solid $color-dt-divider;
+    background-color: $color-dt-header-card-bg;
+    border-bottom: 1px solid $color-dt-divider;
     position: fixed;
     width: 100%;
 }

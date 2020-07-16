@@ -12,7 +12,7 @@
 .country-page-back-btn {
     @include button-styling();
     margin-left: 0;
-    background-color: $color-dt-bright;
+    background-color: $color-dt-header-card-bg;
     margin: $margin-top-bot-major;
     padding: 15px 40px;
     &:hover {

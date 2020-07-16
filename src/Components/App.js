@@ -3,7 +3,7 @@ import TopBar from "./TopBar/TopBar";
 import SearchArea from "./SearchArea/SearchArea";
 import CountryCardContainer from "./Cards/CountryCardContainer";
 import CountryPage from "./CountryPage/CountryPage";
-import CountriesNotFound from './Messages/CountriesNotFound';
+import CountriesNotFound from "./Messages/CountriesNotFound";
 import { Switch, Route } from "react-router-dom";
 import "../styles/styles.css";
 
@@ -66,7 +66,7 @@ export default function App() {
     }
 
     return (
-        <div className="app">
+        <div className={`app ${theme === "light" ? "light-themed" : ""}`}>
             <TopBar changeThemeFunc={changeThemeFunc} theme={theme} />
 
             <Switch>
