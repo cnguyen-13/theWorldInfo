@@ -1,7 +1,7 @@
-To run this application:
+To run this application locally:
 
-*download the project folder
-*Using your terminal, change into the project folder directory
-*run command 'npm install' to install all of the neccesary packages/modules (eg. React, etc).
-*run command 'npm start', it will open in your browser.
-*Have fun!!!
+1. download the project folder
+2. Using your terminal, change into the project folder directory
+3. run command 'npm install' to install all of the neccesary packages/modules (eg. React, etc).
+4. run command 'npm start', it will open in your browser.
+5. Have fun!!!
