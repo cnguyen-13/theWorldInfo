@@ -1,12 +1,14 @@
 import React from "react";
-import SearchBar from "./SearchBar";
-import SearchRegion from "./SearchRegion";
+import SearchBar from "./SearchAreaComponents/SearchBar";
+import SearchRegion from "./SearchAreaComponents/SearchRegion";
 
-export default function SearchArea({ onChangeTextInput, onChangeRegionInput }) {
+export default function SearchArea({ userSearchFunc, userRegionFunc }) {
     return (
         <div className="search-area">
-            <SearchBar onChangeTextInput={onChangeTextInput} />
-            <SearchRegion onChangeRegionInput={onChangeRegionInput} />
+            <div className="search-area-sub-container">
+                <SearchBar userSearchFunc={userSearchFunc} />
+                <SearchRegion userRegionFunc={userRegionFunc} />
+            </div>
         </div>
     );
 }

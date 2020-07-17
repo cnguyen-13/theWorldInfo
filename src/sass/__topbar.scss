@@ -1,0 +1,23 @@
+.top-bar {
+    height: $height-topbar-search;
+    padding: $padding-containers;
+    position: fixed;
+    width: 100%;
+}
+
+.top-bar-sub-container {
+    @include flex-space-between-centered();
+    @include max-width-centered();
+}
+
+.top-bar-title {
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.top-bar-theme-toggler {
+}
+
+#top-bar-theme-checkbox {
+}

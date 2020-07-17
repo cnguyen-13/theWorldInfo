@@ -1,0 +1,21 @@
+.search-area {
+    height: $height-topbar-search;
+    padding: $padding-containers;
+    padding-top: $padding-page-offset + 20px;
+}
+
+.search-area-sub-container {
+    @include flex-space-between-centered();
+    @include max-width-centered();
+}
+//Search bar & Menu
+.search-area-search-bar,
+.search-area-region-menu {
+    @include search-area-input();
+}
+
+//Search Region
+.search-area-region-menu-label {
+    font-weight: bold;
+    margin-right: 10px;
+}

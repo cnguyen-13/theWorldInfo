@@ -1,0 +1,45 @@
+//Container
+.country-cards-container {
+    @include max-width-centered();
+    @include flex-space-between-centered();
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: $padding-containers;
+}
+
+//Cards
+.country-card {
+    margin: 20px;
+    width: 325px;
+    height: 450px;
+    border-radius: $radius-border;
+}
+
+//Image
+.country-card-image {
+    border-radius: $radius-border $radius-border 0px 0px;
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+//Text
+.country-card-text {
+    margin: 10px 20px;
+    margin-bottom: 0;
+}
+
+.country-card-text-title {
+    margin-bottom: $margin-bottom-titles;
+}
+
+.country-card-text-info {
+    margin-bottom: $margin-bottom-titles / 2;
+}
+
+//Button
+.country-card-btn {
+    @include button-styling();
+}

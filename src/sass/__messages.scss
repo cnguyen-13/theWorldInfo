@@ -1,0 +1,14 @@
+.no-countries-found,
+.no-country-found {
+    @include max-width-centered();
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.no-countries-found {
+    padding-top: $padding-page-offset - 50px;
+}
+.no-country-found {
+    padding-top: 150px;
+}

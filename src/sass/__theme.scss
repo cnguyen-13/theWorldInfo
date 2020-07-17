@@ -1,0 +1,116 @@
+//functions
+@function color-html-bg($theme) {
+    @if $theme == "light" {
+        @return $color-lt-html-bg;
+    } @else {
+        @return $color-dt-html-bg;
+    }
+}
+
+@function color-topbar-card-bg($theme) {
+    @if $theme == "light" {
+        @return $color-lt-header-card-bg;
+    } @else {
+        @return $color-dt-header-card-bg;
+    }
+}
+
+@function color-call-to-action-bg($theme) {
+    @if $theme == "light" {
+        @return $color-lt-call-to-action;
+    } @else {
+        @return $color-dt-call-to-action;
+    }
+}
+
+@function color-search-text($theme) {
+    @if $theme == "light" {
+        @return $color-lt-black-text;
+    } @else {
+        @return $color-dt-white-text;
+    }
+}
+
+@function color-divider($theme) {
+    @if $theme == "light" {
+        @return $color-lt-border-divider;
+    } @else {
+        @return $color-dt-divider;
+    }
+}
+
+.dark-themed {
+    background-color: color-html-bg("dark");
+    color: color-search-text("dark");
+
+    a {
+        color: color-search-text("dark");
+    }
+
+    //Top Bar
+    .top-bar {
+        border-bottom: 1px solid color-divider("dark");
+    }
+
+    //Search Area
+    .search-area-region-menu-option {
+        color: $color-search-area-text;
+    }
+
+    .top-bar,
+    .country-card {
+        background-color: color-topbar-card-bg("dark");
+    }
+
+    //Buttons
+    .country-card-btn,
+    .country-page-back-btn,
+    .country-page-main-info-neighbors-link {
+        color: $color-button-text;
+        background-color: color-call-to-action-bg("dark");
+        &:hover {
+            background-color: darken(color-call-to-action-bg("dark"), 10);
+        }
+    }
+}
+
+.light-themed {
+    background-color: color-html-bg("light");
+    color: color-search-text("light");
+
+    a {
+        color: color-search-text("light");
+    }
+
+    //Top Bar
+    .top-bar {
+        border-bottom: 1px solid color-divider("light");
+    }
+
+    //Search Area
+    .search-area-region-menu-option {
+        color: $color-search-area-text;
+    }
+
+    .top-bar,
+    .country-card {
+        background-color: color-topbar-card-bg("light");
+    }
+
+    .country-card,
+    .search-area-search-bar,
+    .search-area-region-menu {
+        border: 1px solid $color-lt-border-divider;
+    }
+
+    //Buttons
+    .country-card-btn,
+    .country-page-back-btn,
+    .country-page-main-info-neighbors-link {
+        color: $color-button-text;
+        background-color: color-call-to-action-bg("light");
+        &:hover {
+            background-color: darken(color-call-to-action-bg("light"), 10);
+        }
+    }
+}

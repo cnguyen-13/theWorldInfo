@@ -1,0 +1,19 @@
+* {
+    font-family: $font-main;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+.app {
+    min-height: 100vh;
+}
