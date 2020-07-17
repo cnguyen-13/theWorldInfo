@@ -1,4 +1,9 @@
-To run this application locally:
+# The World Info
+This is my take on Project #14 from https://dev.to/frontendmentor/16-front-end-projects-with-designs-to-help-improve-your-coding-skills-5ajl without looking at any available code for this particular project.
+
+Users may find any country in the world and find information about each! Searches are done on change to input ex. typing into the search bar will change the countries shown!
+
+# To run this application locally:
 
 1. Download the project folder
 2. Using your terminal, change into the project folder directory
