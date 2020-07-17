@@ -33,7 +33,7 @@
 
 @function color-divider($theme: "light") {
     @if $theme == "light" {
-        @return $color-lt-divider;
+        @return $color-lt-border-divider;
     } @else {
         @return $color-dt-divider;
     }
@@ -95,6 +95,12 @@
     .top-bar,
     .country-card {
         background-color: color-topbar-card-bg("light");
+    }
+
+    .country-card,
+    .search-area-search-bar,
+    .search-area-region-menu {
+        border: 1px solid $color-lt-border-divider;
     }
 
     //Buttons

@@ -8,8 +8,9 @@ $color-lt-header-card-bg: #fff;
 $color-lt-html-bg: #f9f9f9;
 $color-lt-black-text: #333;
 $color-lt-white-text: #eee;
-$color-lt-divider: #000;
+$color-lt-divider: #f1f1f1;
 $color-lt-call-to-action: #2980b9;
+$color-lt-border-divider: #f1f1f1;
 
 //Dark Theme
 $color-dt-header-card-bg: #2b3743;
@@ -55,6 +56,7 @@ $height-topbar-search: 100px;
 @mixin search-area-input() {
     padding: $padding-search-bar;
     color: $color-dt-black-text;
+    border-radius: 3px;
 }
 
 @mixin button-styling() {
