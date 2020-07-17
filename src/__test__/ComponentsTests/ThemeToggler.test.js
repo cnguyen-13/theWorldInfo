@@ -22,22 +22,5 @@ test("Render Correctly", () => {
     //Initial Value
     expect(checkbox.checked).toBeFalsy();
     expect(testingData.theme).toBe("light");
-});
-
-test("Toggle Theme Correctly", () => {
-    const { getByTestId } = render(
-        <ThemeToggler theme="light" changeThemeFunc={changeTestingData} />
-    );
-    const checkbox = getByTestId("theme-checkbox");
-    //Toggling test
-    for (let i = 1; i < 10; i++) {
-        fireEvent.click(checkbox);
-        if (i % 2 === 0) {
-            expect(checkbox.checked).toBeFalsy();
-            expect(testingData.theme).toBe("light");
-        } else {
-            expect(checkbox.checked).toBeTruthy();
-            expect(testingData.theme).toBe("dark");
-        }
-    }
+    expect(testingData.theme).not.toBe("dark");
 });

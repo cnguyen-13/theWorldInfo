@@ -1,5 +1,5 @@
 //functions
-@function color-html-bg($theme: "light") {
+@function color-html-bg($theme) {
     @if $theme == "light" {
         @return $color-lt-html-bg;
     } @else {
@@ -7,7 +7,7 @@
     }
 }
 
-@function color-topbar-card-bg($theme: "light") {
+@function color-topbar-card-bg($theme) {
     @if $theme == "light" {
         @return $color-lt-header-card-bg;
     } @else {
@@ -15,7 +15,7 @@
     }
 }
 
-@function color-call-to-action-bg($theme: "light") {
+@function color-call-to-action-bg($theme) {
     @if $theme == "light" {
         @return $color-lt-call-to-action;
     } @else {
@@ -23,7 +23,7 @@
     }
 }
 
-@function color-search-text($theme: "light") {
+@function color-search-text($theme) {
     @if $theme == "light" {
         @return $color-lt-black-text;
     } @else {
@@ -31,7 +31,7 @@
     }
 }
 
-@function color-divider($theme: "light") {
+@function color-divider($theme) {
     @if $theme == "light" {
         @return $color-lt-border-divider;
     } @else {
