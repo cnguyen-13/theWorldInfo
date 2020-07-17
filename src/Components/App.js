@@ -66,7 +66,12 @@ export default function App() {
     }
 
     return (
-        <div className={`app ${theme === "dark" ? "dark-themed" : ""}`}>
+        <div
+            data-testid="app"
+            className={`app ${
+                theme === "dark" ? "dark-themed" : "light-themed"
+            }`}
+        >
             <TopBar changeThemeFunc={changeThemeFunc} theme={theme} />
 
             <Switch>

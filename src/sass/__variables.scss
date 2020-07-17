@@ -1,13 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 
 //Colors
+$color-button-text: #fff;
+$color-search-area-text: #000;
 //Light Theme
 $color-lt-header-card-bg: #fff;
-$color-lt-html-bg: #fafafa;
+$color-lt-html-bg: #f9f9f9;
 $color-lt-black-text: #333;
 $color-lt-white-text: #eee;
-$color-lt-divider: #f4f4f4;
-$color-lt-call-to-action: #e74c3c;
+$color-lt-divider: #000;
+$color-lt-call-to-action: #2980b9;
 
 //Dark Theme
 $color-dt-header-card-bg: #2b3743;

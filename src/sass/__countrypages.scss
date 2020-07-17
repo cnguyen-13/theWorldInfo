@@ -12,12 +12,8 @@
 .country-page-back-btn {
     @include button-styling();
     margin-left: 0;
-    background-color: $color-dt-header-card-bg;
     margin: $margin-top-bot-major;
     padding: 15px 40px;
-    &:hover {
-        background-color: $color-dt-call-to-action;
-    }
 }
 
 //Flag Image
@@ -42,11 +38,7 @@
 //Bordering Countries
 .country-page-main-info-neighbors-link {
     @include button-styling();
-    background-color: $color-dt-call-to-action;
     margin: 10px 20px 0 0;
-    &:hover {
-        background-color: darken($color-dt-call-to-action, 20);
-    }
 }
 
 .country-page-main-info-neighbors-label,

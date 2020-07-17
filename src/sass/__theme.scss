@@ -1,46 +1,110 @@
-//Everything dealing with color
-* {
-    color: $color-dt-white-text;
-}
-
-html {
-    background-color: $color-dt-html-bg;
-}
-
-//Top Bar
-.top-bar {
-    background-color: $color-dt-header-card-bg;
-    border-bottom: 1px solid $color-dt-divider;
-}
-
-//Search Area
-.search-area-region-menu-option {
-    color: $color-dt-black-text;
-}
-
-//Cards
-.country-card {
-    background-color: $color-dt-header-card-bg;
-}
-
-.country-card-btn {
-    background-color: $color-dt-call-to-action;
-    &:hover {
-        background-color: darken($color-dt-call-to-action, 20);
+//functions
+@function color-html-bg($theme: "light") {
+    @if $theme == "light" {
+        @return $color-lt-html-bg;
+    } @else {
+        @return $color-dt-html-bg;
     }
 }
 
-//Pages
-.country-page-back-btn {
-    background-color: $color-dt-header-card-bg;
-    &:hover {
-        background-color: $color-dt-call-to-action;
+@function color-topbar-card-bg($theme: "light") {
+    @if $theme == "light" {
+        @return $color-lt-header-card-bg;
+    } @else {
+        @return $color-dt-header-card-bg;
     }
 }
 
-.country-page-main-info-neighbors-link {
-    background-color: $color-dt-call-to-action;
-    &:hover {
-        background-color: darken($color-dt-call-to-action, 20);
+@function color-call-to-action-bg($theme: "light") {
+    @if $theme == "light" {
+        @return $color-lt-call-to-action;
+    } @else {
+        @return $color-dt-call-to-action;
+    }
+}
+
+@function color-search-text($theme: "light") {
+    @if $theme == "light" {
+        @return $color-lt-black-text;
+    } @else {
+        @return $color-dt-white-text;
+    }
+}
+
+@function color-divider($theme: "light") {
+    @if $theme == "light" {
+        @return $color-lt-divider;
+    } @else {
+        @return $color-dt-divider;
+    }
+}
+
+.dark-themed {
+    background-color: color-html-bg("dark");
+    color: color-search-text("dark");
+
+    a {
+        color: color-search-text("dark");
+    }
+
+    //Top Bar
+    .top-bar {
+        border-bottom: 1px solid color-divider("dark");
+    }
+
+    //Search Area
+    .search-area-region-menu-option {
+        color: $color-search-area-text;
+    }
+
+    .top-bar,
+    .country-card {
+        background-color: color-topbar-card-bg("dark");
+    }
+
+    //Buttons
+    .country-card-btn,
+    .country-page-back-btn,
+    .country-page-main-info-neighbors-link {
+        color: $color-button-text;
+        background-color: color-call-to-action-bg("dark");
+        &:hover {
+            background-color: darken(color-call-to-action-bg("dark"), 10);
+        }
+    }
+}
+
+.light-themed {
+    background-color: color-html-bg("light");
+    color: color-search-text("light");
+
+    a {
+        color: color-search-text("light");
+    }
+
+    //Top Bar
+    .top-bar {
+        border-bottom: 1px solid color-divider("light");
+    }
+
+    //Search Area
+    .search-area-region-menu-option {
+        color: $color-search-area-text;
+    }
+
+    .top-bar,
+    .country-card {
+        background-color: color-topbar-card-bg("light");
+    }
+
+    //Buttons
+    .country-card-btn,
+    .country-page-back-btn,
+    .country-page-main-info-neighbors-link {
+        color: $color-button-text;
+        background-color: color-call-to-action-bg("light");
+        &:hover {
+            background-color: darken(color-call-to-action-bg("light"), 10);
+        }
     }
 }
