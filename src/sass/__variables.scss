@@ -40,32 +40,3 @@ $radius-border: 5px;
 
 //Height
 $height-topbar-search: 100px;
-
-//Utilities
-@mixin flex-space-between-centered() {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-@mixin max-width-centered() {
-    max-width: 1600px;
-    margin: 0 auto;
-}
-
-@mixin search-area-input() {
-    padding: $padding-search-bar;
-    color: $color-dt-black-text;
-    border-radius: 3px;
-}
-
-@mixin button-styling() {
-    margin-left: 20px;
-    margin-top: 10px;
-    border: none;
-    padding: $padding-button;
-    text-transform: uppercase;
-    border-radius: 2px;
-    font-weight: bold;
-    cursor: pointer;
-}

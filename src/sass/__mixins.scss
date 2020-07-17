@@ -1,0 +1,59 @@
+@mixin flex-space-between-centered() {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin max-width-centered() {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+@mixin search-area-input() {
+    padding: $padding-search-bar;
+    color: $color-dt-black-text;
+    border-radius: 3px;
+}
+
+@mixin button-styling() {
+    margin-left: 20px;
+    margin-top: 10px;
+    border: none;
+    padding: $padding-button;
+    text-transform: uppercase;
+    border-radius: 2px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@mixin set-theme($theme) {
+    background-color: color-html-bg($theme);
+    color: color-search-text($theme);
+
+    a {
+        color: color-search-text($theme);
+    }
+
+    .top-bar {
+        border-bottom: 1px solid color-divider($theme);
+    }
+
+    .search-area-region-menu-option {
+        color: $color-search-area-text;
+    }
+
+    .top-bar,
+    .country-card {
+        background-color: color-topbar-card-bg($theme);
+    }
+
+    .country-card-btn,
+    .country-page-back-btn,
+    .country-page-main-info-neighbors-link {
+        color: $color-button-text;
+        background-color: color-call-to-action-bg($theme);
+        &:hover {
+            background-color: darken(color-call-to-action-bg($theme), 10);
+        }
+    }
+}
