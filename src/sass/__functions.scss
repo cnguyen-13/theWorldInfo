@@ -1,0 +1,39 @@
+@function color-html-bg($theme) {
+    @if $theme == "light" {
+        @return $color-lt-html-bg;
+    } @else {
+        @return $color-dt-html-bg;
+    }
+}
+
+@function color-topbar-card-bg($theme) {
+    @if $theme == "light" {
+        @return $color-lt-header-card-bg;
+    } @else {
+        @return $color-dt-header-card-bg;
+    }
+}
+
+@function color-call-to-action-bg($theme) {
+    @if $theme == "light" {
+        @return $color-lt-call-to-action;
+    } @else {
+        @return $color-dt-call-to-action;
+    }
+}
+
+@function color-search-text($theme) {
+    @if $theme == "light" {
+        @return $color-lt-black-text;
+    } @else {
+        @return $color-dt-white-text;
+    }
+}
+
+@function color-divider($theme) {
+    @if $theme == "light" {
+        @return $color-lt-border-divider;
+    } @else {
+        @return $color-dt-divider;
+    }
+}
