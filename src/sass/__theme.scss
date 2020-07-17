@@ -1,14 +1,14 @@
-//All colors will be established here
-.dark-themed {
-    background-color: color-html-bg("dark");
-    color: color-search-text("dark");
+//Mixin
+@mixin set-theme($theme) {
+    background-color: color-html-bg($theme);
+    color: color-search-text($theme);
 
     a {
-        color: color-search-text("dark");
+        color: color-search-text($theme);
     }
 
     .top-bar {
-        border-bottom: 1px solid color-divider("dark");
+        border-bottom: 1px solid color-divider($theme);
     }
 
     .search-area-region-menu-option {
@@ -17,54 +17,31 @@
 
     .top-bar,
     .country-card {
-        background-color: color-topbar-card-bg("dark");
+        background-color: color-topbar-card-bg($theme);
     }
 
     .country-card-btn,
     .country-page-back-btn,
     .country-page-main-info-neighbors-link {
         color: $color-button-text;
-        background-color: color-call-to-action-bg("dark");
+        background-color: color-call-to-action-bg($theme);
         &:hover {
-            background-color: darken(color-call-to-action-bg("dark"), 10);
+            background-color: darken(color-call-to-action-bg($theme), 10);
         }
     }
 }
 
+//All colors will be established here
+.dark-themed {
+    @include set-theme("dark");
+}
+
 .light-themed {
-    background-color: color-html-bg("light");
-    color: color-search-text("light");
-
-    a {
-        color: color-search-text("light");
-    }
-
-    .top-bar {
-        border-bottom: 1px solid color-divider("light");
-    }
-
-    .search-area-region-menu-option {
-        color: $color-search-area-text;
-    }
-
-    .top-bar,
-    .country-card {
-        background-color: color-topbar-card-bg("light");
-    }
+    @include set-theme("light");
 
     .country-card,
     .search-area-search-bar,
     .search-area-region-menu {
         border: 1px solid $color-lt-border-divider;
-    }
-
-    .country-card-btn,
-    .country-page-back-btn,
-    .country-page-main-info-neighbors-link {
-        color: $color-button-text;
-        background-color: color-call-to-action-bg("light");
-        &:hover {
-            background-color: darken(color-call-to-action-bg("light"), 10);
-        }
     }
 }
